@@ -1,57 +1,73 @@
-body {/* allgemeine Stile für den Body */
-    background-color: #3a3a3a;
-    font-family: Arial, sans-serif;
-    margin: 0;
-    color: #f2f2f2;
+body {
+  /* allgemeine Stile für den Body */
+  background-color: #3a3a3a;
+  font-family: Arial, sans-serif;
+  margin: 0;
+  color: #f2f2f2;
 }
 
-main {/* Hauptbereich der Seite */
-    max-width: 1000px;
-    padding: 20px 75px;
-    border-radius: 0 0 10px 10px;
-    background-color: #2b2b2b;;
+main {
+  /* Hauptbereich der Seite */
+  max-width: 1000px;
+  border-radius: 0 0 10px 10px;
+  background-color: #2b2b2b;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.486);
 }
-
-.kalenderblatthead {/* Kopfzeile des Kalenders */
-    font-size: 24px;
-    
+.kalenderblatthead {
+  /* Kopfzeile des Kalenders */
+  font-size: 24px;
+  text-shadow: black 0px 0px 12px;
 }
-
-.heute { /* markiert den aktuellen Tag */
-    color: black;
-    background-color: lightgray;
-    font-weight: bold;
+.heute {
+  /* markiert den aktuellen Tag */
+  color: black;
+  background-color: lightgray;
+  font-weight: bold;
 }
-    .heute:hover {
-        background-color: black;
-        color: white;
-    }
+.heute:hover {
+  background-color: black;
+  color: white;
+}
 
 #kalenderblatt {
-    text-align: center;
+  .wochentage {
+    background-color: lightslategray;
+  }
+  text-align: center;
 }
-#kalenderblatt { /* fügt einen Raster-Effekt hinzu */
-    th, td {
-        border: 3px solid black;
-        border-radius: 5px;
-        border-collapse: separate;
-        padding: 4px;
+#kalenderblatt {
+  /* fügt einen Raster-Effekt hinzu */
+  th,
+  td {
+    border: 3px solid black;
+    border-radius: 5px;
+    border-collapse: separate;
+    padding: 4px;
+  }
+  table {
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.486);
+    table-layout: fixed;
+    width: 40%;
+    background-color: #3a3a3a;
+    border: black 5px solid;
+    border-radius: 5px;
+    border-spacing: 5px;
+    border-collapse: separate;
+    padding: 10px;
+  }
 
-    }
-    table {
-        border: black 5px solid;
-        border-radius: 5px;
-        border-spacing: 5px;
-        border-collapse: separate;
-        padding: 10px;
-        outline: white 1px solid;
-    }
+  td:nth-child(7) {
+    /* Samstag blau */
+    background-color: steelblue;
+  }
 
-    td:nth-child(7) { /* Samstag blau */
-        background-color: steelblue;
-    }
-
-    td:nth-child(8) { /* Sonntag rot */
-        background-color: #e04a4a;
-    }
+  td:nth-child(8) {
+    /* Sonntag rot */
+    background-color: #e04a4a;
+  }
+  td:nth-child(1) {
+    /* KW */
+    background-color: lightslategray;
+    font-weight: bold;
+  }
 }
