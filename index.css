@@ -11,6 +11,7 @@ main {
   max-width: 1000px;
   border-radius: 0 0 10px 10px;
   background-color: #2b2b2b;
+  padding: 25px 75px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.486);
 }
 .kalenderblatthead {
