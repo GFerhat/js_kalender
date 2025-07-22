@@ -8,11 +8,31 @@ body {
 
 main {
   /* Hauptbereich der Seite */
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  grid-template-areas: "head head" "intro intro"
+    "kalender kalender" "historie historie";
+  gap: 30px;
+
   max-width: 1000px;
   border-radius: 0 0 10px 10px;
   background-color: #2b2b2b;
-  padding: 25px 75px;
+  padding: 10px 50px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.486);
+}
+
+#seitenkopf { /* area Zuweisungen */
+  grid-area:head
+}
+#introtext {
+  grid-area:intro;
+}
+#kalenderblatt {
+  grid-area:kalender;
+}
+#historie {
+  grid-area:historie;
+
 }
 .kalenderblatthead {
   /* Kopfzeile des Kalenders */
