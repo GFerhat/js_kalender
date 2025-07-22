@@ -14,8 +14,8 @@ main {
   grid-template-columns: 3fr 4fr;
   grid-template-areas: "head head"
                        "kalender historie"
-                       "info info";
-  gap: 20px;
+                       "kalender info";
+  gap: 30px;
   width: 100%;
   box-sizing: border-box;
   border-radius: 0 0 10px 10px;
@@ -49,7 +49,7 @@ main {
 
 .kalenderblatthead {
   /* Kopfzeile des Kalenders */
-  font-size: 24px;
+  font-size: 27px;
   text-shadow: black 0px 0px 12px;
 }
 .heute {
@@ -68,9 +68,14 @@ main {
   align-self: center;
 }
 
-#kalenderblatt th, td {
+#kalenderblatt td {
   /* Tabellenzellen im Kalender */
   background-color: #2b2b2b;
+  border-radius: 10px 0;
+  padding: 4px;
+}
+
+#kalenderblatt th{
   border-radius: 10px 0;
   padding: 4px;
 }
@@ -80,7 +85,6 @@ main {
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.486);
   table-layout: fixed;
   width: 100%;
-  
   background-color: #3a3a3a;
   border: rgba(0, 0, 0, 0.719) 2px solid;
   border-radius: 50px 0;
@@ -118,7 +122,7 @@ main {
   background-color: #3a3a3a;
   border: rgba(0, 0, 0, 0.719) 2px solid;
   padding: 10px;
-  border-radius: 30px 0;
+  border-radius: 10px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.486);
 }
   #historie p {
@@ -134,6 +138,13 @@ main {
   max-width: 800px;
   background-color: #3a3a3a;
   border: rgba(0, 0, 0, 0.719) 2px solid;
-  border-radius: 50px 0;
+  border-radius: 10px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.486);
+}
+
+#infotext h2 {
+  /* Überschrift im Infotext */
+  font-size: 20px;
+  color: #f2f2f2;
+  text-shadow: 0px 0px 12px black;
 }
