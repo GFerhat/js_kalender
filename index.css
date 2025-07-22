@@ -4,16 +4,20 @@ body {
   font-family: Arial, sans-serif;
   margin: 0;
   color: #f2f2f2;
+  line-height: 22px;
+  ;
 }
 
 main {
   /* Hauptbereich der Seite */
   display: grid;
   grid-template-columns: 3fr 4fr;
-  grid-template-areas: "head head" "intro intro"
-                       "kalender historie";
+  grid-template-areas: "head head"
+                       "kalender historie"
+                       "info info";
   gap: 20px;
-  max-width: 1000px;
+  width: 100%;
+  box-sizing: border-box;
   border-radius: 0 0 10px 10px;
   background-color: #2b2b2b;
   padding: 10px 50px;
@@ -23,15 +27,15 @@ main {
 #seitenkopf { /* area Zuweisungen */
   grid-area:head;
 }
-#introtext {
-  grid-area:intro;
-}
-#kalenderblatt {
-  grid-area:kalender;
-}
+
 #historie {
   grid-area:historie;
 }
+
+#infotext {
+  grid-area:info;
+}
+
 
 #seitenkopf {
   /* Kopfzeile der Seite */
@@ -59,7 +63,10 @@ main {
   color: white;
 }
 
-
+#kalenderblatt {
+  grid-area:kalender;
+  align-self: center;
+}
 
 #kalenderblatt th, td {
   /* Tabellenzellen im Kalender */
@@ -73,6 +80,7 @@ main {
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.486);
   table-layout: fixed;
   width: 100%;
+  
   background-color: #3a3a3a;
   border: rgba(0, 0, 0, 0.719) 2px solid;
   border-radius: 50px 0;
@@ -104,3 +112,28 @@ main {
     background-color: lightslategray;
     font-weight: bold;
   }
+
+  #historie {
+  /* Historie Bereich */
+  background-color: #3a3a3a;
+  border: rgba(0, 0, 0, 0.719) 2px solid;
+  padding: 10px;
+  border-radius: 30px 0;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.486);
+}
+  #historie p {
+    /* Text im Historie Bereich */
+    font-size: 20px;
+    line-height: 1.5;
+    color: #f2f2f2;
+  }
+
+#infotext {
+  /*Informationstext am Ende der Seite */
+  padding: 20px;
+  max-width: 800px;
+  background-color: #3a3a3a;
+  border: rgba(0, 0, 0, 0.719) 2px solid;
+  border-radius: 50px 0;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.486);
+}
