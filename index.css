@@ -7,7 +7,7 @@
   --table-background: #3a3a3a;
   --hover-color: #808080;
   }
-  
+
 body {
   /* allgemeine Stile für den Body */
   background-color: var(--background-color-body);
@@ -35,7 +35,7 @@ main {
   grid-template-columns: 3fr 4fr;
   grid-template-areas:
     "kalender historie"
-    "kalender info";
+    "info info";
   width: 100%;
   box-sizing: border-box;
   border-radius: 0 0 10px 10px;
@@ -55,7 +55,6 @@ main {
 
 #kalenderblatt {
   grid-area: kalender;
-  align-self: center;
   text-align: center;
 }
 
@@ -132,7 +131,6 @@ th:hover {
   color: #f2f2f2;
   max-width: 60%;
 }
-
 
 #infotext {
   grid-area: info;
