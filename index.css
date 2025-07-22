@@ -1,10 +1,32 @@
+:root {
+  /* CSS Variablen für Farben */
+  --background-color: #2b2b2b;
+  --background-color-body: #3a3a3a;
+  --text-color: #f2f2f2;
+  --header-color: rgba(0, 0, 0, 0.233);
+  --table-background: #3a3a3a;
+  --hover-color: #808080;
+  }
+  
 body {
   /* allgemeine Stile für den Body */
-  background-color: #3a3a3a;
+  background-color: var(--background-color-body);
   font-family: Arial, sans-serif;
   margin: 0;
   color: #f2f2f2;
-  line-height: 22px;
+}
+
+#header {
+  text-align: center;
+  font-size: 25px;
+  text-shadow: 0px 0px 12px black;
+  text-transform: uppercase;
+  background-color: var(--background-color);
+  padding: 50px;
+}
+
+h1 {
+  margin: 0;
 }
 
 main {
@@ -12,7 +34,6 @@ main {
   display: grid;
   grid-template-columns: 3fr 4fr;
   grid-template-areas:
-    "head head"
     "kalender historie"
     "kalender info";
   width: 100%;
@@ -21,26 +42,10 @@ main {
   background-color: #2b2b2b;
   padding: 10px 50px;
   gap: 10px;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.486);
+  box-shadow: 1px 10px 10px rgba(0, 0, 0, 0.486);
+  box-shadow: top none;
 }
 
-#seitenkopf {
-  text-align: center;
-  font-size: 25px;
-  color: #f2f2f2;
-  text-shadow: 0px 0px 12px black;
-  text-transform: uppercase;
-  grid-area: head;
-  background-color: rgba(0, 0, 0, 0.233); 
-}
-
-#historie {
-  grid-area: historie;
-}
-
-#infotext {
-  grid-area: info;
-}
 
 .kalenderblatthead {
   /* Kopfzeile des Kalenders */
@@ -51,9 +56,11 @@ main {
 #kalenderblatt {
   grid-area: kalender;
   align-self: center;
+  text-align: center;
 }
 
-#kalenderblatt td, th {
+#kalenderblatt td,
+th {
   /* Tabellenzellen im K alender */
   background-color: #2b2b2b;
   border-radius: 10px 0;
@@ -72,7 +79,7 @@ main {
   padding: 10px;
 }
 
-#kalenderblatt { 
+#kalenderblatt {
   .heute {
     /* markiert den aktuellen Tag */
     color: black;
@@ -84,10 +91,6 @@ main {
 .wochentage {
   /* Hintergrundfarbe für Wochentage */
   background-color: lightslategray;
-}
-
-#kalenderblatt {
-  text-align: center;
 }
 
 #kalenderblatt td:nth-child(7) {
@@ -113,7 +116,7 @@ th:hover {
 }
 
 #historie {
-  /* Historie Bereich */
+  grid-area: historie;
   background-color: #3a3a3a;
   border: rgba(0, 0, 0, 0.719) 2px solid;
   padding: 10px;
@@ -121,12 +124,18 @@ th:hover {
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.486);
   max-width: 90%;
 }
+
 #historie p {
   /* Text im Historie Bereich */
   font-size: 20px;
   line-height: 1.5;
   color: #f2f2f2;
   max-width: 60%;
+}
+
+
+#infotext {
+  grid-area: info;
 }
 
 #infotext {
