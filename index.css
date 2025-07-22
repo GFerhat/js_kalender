@@ -34,9 +34,9 @@ main {
 }
 
 #seitenkopf {
-  /* Kopfzeile der Seite */;
+  /* Kopfzeile der Seite */
   text-align: center;
-  font-size: 25px;;
+  font-size: 25px;
   color: #f2f2f2;
   text-shadow: 0px 0px 12px black;
 }
@@ -59,42 +59,47 @@ main {
   color: white;
 }
 
-#kalenderblatt {
-  /* fügt einen Raster-Effekt hinzu */
-  th, td {
-    border: 3px solid black;
-    border-radius: 5px;
-    padding: 4px;
-  }
-  
-  table {;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.486);
-    table-layout: fixed;
-    width: 100%;
-    background-color: #3a3a3a;
-    border: black 4px solid;
-    border-radius: 5px;
-    border-spacing: 4px;
-    padding: 10px;
-  }
-   .wochentage {
-    background-color: lightslategray;
-  }
-  
-  text-align: center;
-
-  td:nth-child(7) {
-    /* Samstag blau */
-    background-color: steelblue;
-  }
-
-  td:nth-child(8) {
-    /* Sonntag rot */
-    background-color: #e04a4a;
-  }
-  td:nth-child(1) {
-    /* KW */
-    background-color: lightslategray;
-    font-weight: bold;
-  }
+#kalenderblatt th, td {
+  /* Tabellenzellen im Kalender */
+  border: 3px solid black;
+  border-radius: 5px;
+  padding: 4px;
 }
+
+#kalenderblatt table {
+  /* Kalender Tabelle */
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.486);
+  table-layout: fixed;
+  width: 100%;
+  background-color: #3a3a3a;
+  border: black 4px solid;
+  border-radius: 5px;
+  border-spacing: 4px;
+  padding: 10px;
+}
+
+.wochentage {
+  /* Hintergrundfarbe für Wochentage */
+  background-color: lightslategray;
+}
+
+#kalenderblatt {
+  text-align: center;
+}
+
+td:nth-child(7) {
+  /* Hintergrundfarbe für Samstag */
+  background-color: steelblue;
+}
+
+td:nth-child(8) {
+  /* Hintergrundfarbe für Sonntag */
+  background-color: #e04a4a;
+}
+
+td:nth-child(1) {
+  /* Hintergrundfarbe für den ersten Tag der Woche */
+  background-color: lightslategray;
+  font-weight: bold;
+}
+
