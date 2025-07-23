@@ -1,3 +1,6 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Titillium+Web:ital,wght@0,200;0,300;0,400;0,600;0,700;0,900;1,200;1,300;1,400;1,600;1,700&display=swap');
+
 :root { /* CSS Variablen für Farben */
   --background-color: #2b2b2b;
   --background-color-body: #3a3a3a;
@@ -7,16 +10,26 @@
   --kw-color: lightslategray;
   --sa-color: steelblue;
   --so-color: #e04a4a;
+  --boxshadow-color: rgba(0, 0, 0, 0.486);
   }
+
+
+*{
+  /* border: #f00 1px solid; */
+  margin: 0; 
+}
 
 body { /* allgemeine Stile für den Body */
   background-color: var(--background-color-body);
-  font-family: Arial, sans-serif;
+  font-family: 'Titillium Web', sans-serif;
   margin: 0;
-  color: #f2f2f2;
+  color: var(--text-color);
 }
 
+
 #header {
+  display: flex;
+  flex-direction: row;
   text-align: center;
   font-size: 25px;
   text-shadow: 0px 0px 12px black;
@@ -25,21 +38,32 @@ body { /* allgemeine Stile für den Body */
   padding: 50px;
 }
 
-h1 { margin: 0; }
+h1 { 
+  margin: 0; 
+}
+
+#F1logohead{
+  width: 150px;
+}
+
+h2 {
+  font-size: 20px;
+  text-shadow: 0px 0px 12px black;
+}
+
+
 
 main { /* Hauptbereich der Seite */
   display: grid;
-  grid-template-columns: 3fr 4fr;
+  grid-template-columns: 1fr 2fr 1fr;
   grid-template-areas:
-  "kalender historie"
-  "info info";
-  width: 100%;
+  "historie kalender info";
   box-sizing: border-box;
   border-radius: 0 0 10px 10px;
   background-color: var(--background-color);
   padding: 2% 3%;
   gap: 10px;
-  box-shadow: 1px 10px 10px rgba(0, 0, 0, 0.486);
+  box-shadow: 1px 10px 10px var(--boxshadow-color);
 }
 
 #kalenderblatt {
@@ -47,7 +71,7 @@ main { /* Hauptbereich der Seite */
 }
 
 th.kalenderblatthead { /* Kopfzeile des Kalenders */
-  font-size: 26px;
+  font-size: 2em;
   text-shadow: black 0px 0px 12px;
   background-color: var(--background-color);
   border-radius: 15px 0;
@@ -55,10 +79,10 @@ th.kalenderblatthead { /* Kopfzeile des Kalenders */
 
 #kalenderblatt table { /* Kalender Tabelle */
   text-align: center;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.486);
-  table-layout: fixed; /* feste Breite für die Zellen */
+  box-shadow: 0 0 10px var(--boxshadow-color);
+  table-layout: fixed; /* feste Breite für die Zellen */;
   width: 100%;
-  max-width: 100%;
+  /* min-width: 500px; */
   background-color: var(--background-color-body);
   border: rgba(0, 0, 0, 0.719) 2px solid;
   border-radius: 50px 0;
@@ -87,6 +111,14 @@ tr.wochentage th {
   border-radius: 10px 0;
 }
 
+tr.kalendertage1>td:nth-child(2) {
+  background:transparent;
+}
+
+th.kalenderblatthead:hover { /* Hover-Effekt für Kalenderblatt Kopfzeile */
+  background-color: var(--hover-color);
+}
+
 tr.wochentage th:hover { /* Hover-Effekt für Wochentage */ 
     background-color:var(--hover-color);
 }
@@ -104,7 +136,7 @@ tr.wochentage th:hover { /* Hover-Effekt für Wochentage */
   font-weight: bold;
 }
 
-#kalenderblatt td:hover { /* Hover-Effekt für Kalenderblatt */
+#kalenderblatt td:hover:not(tr.kalendertage1>td:nth-child(2)) {
   background-color: var(--hover-color);
 }
 
@@ -113,28 +145,26 @@ tr.wochentage th:hover { /* Hover-Effekt für Wochentage */
   background-color: var(--background-color-body);
   border: rgba(0, 0, 0, 0.719) 2px solid;
   padding: 10px;
-  border-radius: 10px;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.486);
-  max-width: 90%;
+  border-radius: 5px;
+  box-shadow: 0 0 10px var(--boxshadow-color);
+
 }
 
-#historie p {
-  font-size: 20px;
+#historie li {
   line-height: 1.5;
-  max-width: 60%;
 }
 
 #infotext {
   grid-area: info;
-  padding: 20px;
-  max-width: 75%;
+  padding: 3px 25px;
+  margin: 0 auto;
   background-color: var(--background-color-body);
   border: rgba(0, 0, 0, 0.719) 2px solid;
-  border-radius: 10px;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.486);
+  border-radius: 5px;
+  box-shadow: 0 0 10px var(--boxshadow-color);
 }
 
-#infotext h2 {
-  font-size: 20px;
-  text-shadow: 0px 0px 12px black;
+#infotext, #historie {
+  height: fit-content;
+  min-height: min-content;
 }
