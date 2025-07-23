@@ -1,5 +1,4 @@
-:root {
-  /* CSS Variablen für Farben */
+:root { /* CSS Variablen für Farben */
   --background-color: #2b2b2b;
   --background-color-body: #3a3a3a;
   --text-color: #f2f2f2;
@@ -10,8 +9,7 @@
   --so-color: #e04a4a;
   }
 
-body {
-  /* allgemeine Stile für den Body */
+body { /* allgemeine Stile für den Body */
   background-color: var(--background-color-body);
   font-family: Arial, sans-serif;
   margin: 0;
@@ -29,8 +27,7 @@ body {
 
 h1 { margin: 0; }
 
-main {
-  /* Hauptbereich der Seite */
+main { /* Hauptbereich der Seite */
   display: grid;
   grid-template-columns: 3fr 4fr;
   grid-template-areas:
@@ -49,16 +46,14 @@ main {
   grid-area: kalender;
 }
 
-th.kalenderblatthead {
-  /* Kopfzeile des Kalenders */
+th.kalenderblatthead { /* Kopfzeile des Kalenders */
   font-size: 26px;
   text-shadow: black 0px 0px 12px;
   background-color: var(--background-color);
   border-radius: 15px 0;
 }
 
-#kalenderblatt table {
-  /* Kalender Tabelle */
+#kalenderblatt table { /* Kalender Tabelle */
   text-align: center;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.486);
   table-layout: fixed; /* feste Breite für die Zellen */
@@ -71,16 +66,14 @@ th.kalenderblatthead {
   padding: 10px;
 }
 
-.kalendertage td {
-  /* Tabellenzellen im K alender */
+.kalendertage td { /* Tabellenzellen im K alender */
   background-color: var(--background-color);
   border-radius: 10px 0;
   padding: 1.5%;
 }
 
 #kalenderblatt {
-  .heute {
-    /* markiert den aktuellen Tag */
+  .heute { /* markiert den aktuellen Tag */
     color: black;
     background-color: lightgray;
     font-weight: bold;
@@ -94,29 +87,24 @@ tr.wochentage th {
   border-radius: 10px 0;
 }
 
-  tr.wochentage th:hover {
-    /* Hover-Effekt für Wochentage */
+tr.wochentage th:hover { /* Hover-Effekt für Wochentage */ 
     background-color:var(--hover-color);
-  }
+}
 
-#kalenderblatt td:nth-child(7) {
-  /* Hintergrundfarbe für Samstag */
+#kalenderblatt td:nth-child(7) { /* Hintergrundfarbe für Samstag */
   background-color: var(--sa-color);
 }
 
-#kalenderblatt td:nth-child(8) {
-  /* Hintergrundfarbe für Sonntag */
+#kalenderblatt td:nth-child(8) { /* Hintergrundfarbe für Sonntag */
   background-color: var(--so-color);
 }
 
-#kalenderblatt td:nth-child(1) {
-  /* Hintergrundfarbe für die KW */
+#kalenderblatt td:nth-child(1) {  /* Hintergrundfarbe für die KW */
   background-color: var(--kw-color);
   font-weight: bold;
 }
 
-#kalenderblatt td:hover {
-  /* Hover-Effekt für Kalenderblatt */
+#kalenderblatt td:hover { /* Hover-Effekt für Kalenderblatt */
   background-color: var(--hover-color);
 }
 
