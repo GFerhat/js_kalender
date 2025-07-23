@@ -6,6 +6,8 @@
   --table-background: #3a3a3a;
   --hover-color: #808080;
   --kw-color: lightslategray;
+  --sa-color: steelblue;
+  --so-color: #e04a4a;
   }
 
 body {
@@ -62,7 +64,7 @@ th.kalenderblatthead {
   table-layout: fixed; /* feste Breite für die Zellen */
   width: 100%;
   max-width: 100%;
-  background-color: #3a3a3a;
+  background-color: var(--background-color-body);
   border: rgba(0, 0, 0, 0.719) 2px solid;
   border-radius: 50px 0;
   border-spacing: 5px;
@@ -96,17 +98,15 @@ tr.wochentage th {
     /* Hover-Effekt für Wochentage */
     background-color:var(--hover-color);
   }
-  
-
 
 #kalenderblatt td:nth-child(7) {
   /* Hintergrundfarbe für Samstag */
-  background-color: steelblue;
+  background-color: var(--sa-color);
 }
 
 #kalenderblatt td:nth-child(8) {
   /* Hintergrundfarbe für Sonntag */
-  background-color: #e04a4a;
+  background-color: var(--so-color);
 }
 
 #kalenderblatt td:nth-child(1) {
@@ -122,7 +122,7 @@ tr.wochentage th {
 
 #historie {
   grid-area: historie;
-  background-color: #3a3a3a;
+  background-color: var(--background-color-body);
   border: rgba(0, 0, 0, 0.719) 2px solid;
   padding: 10px;
   border-radius: 10px;
@@ -140,7 +140,7 @@ tr.wochentage th {
   grid-area: info;
   padding: 20px;
   max-width: 75%;
-  background-color: #3a3a3a;
+  background-color: var(--background-color-body);
   border: rgba(0, 0, 0, 0.719) 2px solid;
   border-radius: 10px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.486);
