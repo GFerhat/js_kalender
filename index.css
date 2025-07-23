@@ -3,9 +3,9 @@
   --background-color: #2b2b2b;
   --background-color-body: #3a3a3a;
   --text-color: #f2f2f2;
-  --header-color: rgba(0, 0, 0, 0.233);
   --table-background: #3a3a3a;
   --hover-color: #808080;
+  --kw-color: lightslategray;
   }
 
 body {
@@ -25,57 +25,55 @@ body {
   padding: 50px;
 }
 
-h1 {
-  margin: 0;
-}
+h1 { margin: 0; }
 
 main {
   /* Hauptbereich der Seite */
   display: grid;
   grid-template-columns: 3fr 4fr;
   grid-template-areas:
-    "kalender historie"
-    "info info";
+  "kalender historie"
+  "info info";
   width: 100%;
   box-sizing: border-box;
   border-radius: 0 0 10px 10px;
-  background-color: #2b2b2b;
-  padding: 10px 50px;
+  background-color: var(--background-color);
+  padding: 2% 3%;
   gap: 10px;
   box-shadow: 1px 10px 10px rgba(0, 0, 0, 0.486);
-  box-shadow: top none;
-}
-
-
-.kalenderblatthead {
-  /* Kopfzeile des Kalenders */
-  font-size: 27px;
-  text-shadow: black 0px 0px 12px;
 }
 
 #kalenderblatt {
   grid-area: kalender;
-  text-align: center;
 }
 
-#kalenderblatt td,
-th {
-  /* Tabellenzellen im K alender */
-  background-color: #2b2b2b;
-  border-radius: 10px 0;
-  padding: 6px;
+th.kalenderblatthead {
+  /* Kopfzeile des Kalenders */
+  font-size: 26px;
+  text-shadow: black 0px 0px 12px;
+  background-color: var(--background-color);
+  border-radius: 15px 0;
 }
 
 #kalenderblatt table {
   /* Kalender Tabelle */
+  text-align: center;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.486);
   table-layout: fixed; /* feste Breite für die Zellen */
   width: 100%;
+  max-width: 100%;
   background-color: #3a3a3a;
   border: rgba(0, 0, 0, 0.719) 2px solid;
   border-radius: 50px 0;
-  border-spacing: 4px;
+  border-spacing: 5px;
   padding: 10px;
+}
+
+.kalendertage td {
+  /* Tabellenzellen im K alender */
+  background-color: var(--background-color);
+  border-radius: 10px 0;
+  padding: 1.5%;
 }
 
 #kalenderblatt {
@@ -87,10 +85,19 @@ th {
   }
 }
 
-.wochentage {
-  /* Hintergrundfarbe für Wochentage */
-  background-color: lightslategray;
+tr.wochentage th {
+  background-color:var(--kw-color);
+  font-weight: bold;
+  padding: 1.5%;
+  border-radius: 10px 0;
 }
+
+  tr.wochentage th:hover {
+    /* Hover-Effekt für Wochentage */
+    background-color:var(--hover-color);
+  }
+  
+
 
 #kalenderblatt td:nth-child(7) {
   /* Hintergrundfarbe für Samstag */
@@ -103,15 +110,14 @@ th {
 }
 
 #kalenderblatt td:nth-child(1) {
-  /* Hintergrundfarbe für den ersten Tag der Woche */
-  background-color: lightslategray;
+  /* Hintergrundfarbe für die KW */
+  background-color: var(--kw-color);
   font-weight: bold;
 }
 
-#kalenderblatt td:hover,
-th:hover {
+#kalenderblatt td:hover {
   /* Hover-Effekt für Kalenderblatt */
-  background-color: #808080;
+  background-color: var(--hover-color);
 }
 
 #historie {
@@ -125,21 +131,15 @@ th:hover {
 }
 
 #historie p {
-  /* Text im Historie Bereich */
   font-size: 20px;
   line-height: 1.5;
-  color: #f2f2f2;
   max-width: 60%;
 }
 
 #infotext {
   grid-area: info;
-}
-
-#infotext {
-  /*Informationstext am Ende der Seite */
   padding: 20px;
-  max-width: 60%;
+  max-width: 75%;
   background-color: #3a3a3a;
   border: rgba(0, 0, 0, 0.719) 2px solid;
   border-radius: 10px;
@@ -147,8 +147,6 @@ th:hover {
 }
 
 #infotext h2 {
-  /* Überschrift im Infotext */
   font-size: 20px;
-  color: #f2f2f2;
   text-shadow: 0px 0px 12px black;
 }
