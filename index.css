@@ -65,6 +65,7 @@ main { /* Hauptbereich der Seite */
 
 #kalenderblatt {
   grid-area: kalender;
+  min-width: 500px;
 }
 
 th.kalenderblatthead { /* Kopfzeile des Kalenders */
@@ -158,9 +159,9 @@ tr.wochentage th:hover { /* Hover-Effekt für Wochentage */
 }
 
 #infotext {
+  line-height: 1.5;
   grid-area: info;
   padding: 3px 25px;
-  margin: 0 auto;
   background-color: var(--background-color-body);
   border: rgba(0, 0, 0, 0.719) 2px solid;
   border-radius: 5px;
