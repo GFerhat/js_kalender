@@ -15,7 +15,6 @@
 
 
 *{
-  /* border: #f00 1px solid; */
   margin: 0; 
 }
 
@@ -28,10 +27,8 @@ body { /* allgemeine Stile für den Body */
 
 
 #header {
-  display: flex;
   flex-direction: row;
   text-align: center;
-  font-size: 25px;
   text-shadow: 0px 0px 12px black;
   text-transform: uppercase;
   background-color: var(--background-color);
@@ -39,15 +36,15 @@ body { /* allgemeine Stile für den Body */
 }
 
 h1 { 
-  margin: 0; 
+  font-size: 3rem;
 }
 
 #F1logohead{
-  width: 150px;
+  width: 200px;
 }
 
 h2 {
-  font-size: 20px;
+  font-size: 1.4rem;
   text-shadow: 0px 0px 12px black;
 }
 
@@ -71,7 +68,7 @@ main { /* Hauptbereich der Seite */
 }
 
 th.kalenderblatthead { /* Kopfzeile des Kalenders */
-  font-size: 2em;
+  font-size: 2rem;
   text-shadow: black 0px 0px 12px;
   background-color: var(--background-color);
   border-radius: 15px 0;
@@ -87,6 +84,7 @@ th.kalenderblatthead { /* Kopfzeile des Kalenders */
   border-radius: 50px 0;
   border-spacing: 5px;
   padding: 10px;
+  font-size: 1.4rem;
 }
 
 .kalendertage td { /* Tabellenzellen im K alender */
@@ -116,10 +114,14 @@ tr.kalendertage1>td:nth-child(2) {
 
 th.kalenderblatthead:hover { /* Hover-Effekt für Kalenderblatt Kopfzeile */
   background-color: var(--hover-color);
+  transform: scale(1.15);
+  transition: 0.3s;
 }
 
 tr.wochentage th:hover { /* Hover-Effekt für Wochentage */ 
     background-color:var(--hover-color);
+    transform: scale(1.15);
+    transition: 0.3s;
 }
 
 #kalenderblatt td:nth-child(7) { /* Hintergrundfarbe für Samstag */
@@ -137,6 +139,8 @@ tr.wochentage th:hover { /* Hover-Effekt für Wochentage */
 
 #kalenderblatt td:hover:not(tr.kalendertage1>td:nth-child(2)) {
   background-color: var(--hover-color);
+  transform: scale(1.15);
+  transition: 0.3s;
 }
 
 #historie {
