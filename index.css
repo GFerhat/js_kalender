@@ -2,17 +2,15 @@
 @import url('https://fonts.googleapis.com/css2?family=Titillium+Web:ital,wght@0,200;0,300;0,400;0,600;0,700;0,900;1,200;1,300;1,400;1,600;1,700&display=swap');
 
 :root { /* CSS Variablen für Farben */
-  --background-color: #2b2b2b;
+  --background-color: #1e1e1e;
   --background-color-body: #3a3a3a;
   --text-color: #f2f2f2;
-  --table-background: #3a3a3a;
   --hover-color: #808080;
   --kw-color: lightslategray;
   --sa-color: steelblue;
   --so-color: #e04a4a;
   --boxshadow-color: rgba(0, 0, 0, 0.486);
   }
-
 
 *{
   margin: 0; 
@@ -23,8 +21,9 @@ body { /* allgemeine Stile für den Body */
   font-family: 'Titillium Web', sans-serif;
   margin: 0;
   color: var(--text-color);
+  min-width: 1200px;
+  overflow-x: auto ;
 }
-
 
 #header {
   flex-direction: row;
@@ -48,19 +47,20 @@ h2 {
   text-shadow: 0px 0px 12px black;
 }
 
-
-
 main { /* Hauptbereich der Seite */
   display: grid;
   grid-template-columns: 1fr 2fr 1fr;
   grid-template-areas:
   "historie kalender info";
-  box-sizing: border-box;
+  align-items: start;
+  gap: 10px;
+  padding: 2% 3%;
   border-radius: 0 0 10px 10px;
   background-color: var(--background-color);
-  padding: 2% 3%;
-  gap: 10px;
   box-shadow: 1px 10px 10px var(--boxshadow-color);
+  min-width: 1200px;
+  overflow-x: auto ;
+  
 }
 
 #kalenderblatt {
@@ -166,9 +166,4 @@ tr.wochentage th:hover { /* Hover-Effekt für Wochentage */
   border: rgba(0, 0, 0, 0.719) 2px solid;
   border-radius: 5px;
   box-shadow: 0 0 10px var(--boxshadow-color);
-}
-
-#infotext, #historie {
-  height: fit-content;
-  min-height: min-content;
 }
