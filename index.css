@@ -36,24 +36,21 @@ body { /* allgemeine Stile für den Body */
 
 #F1logohead { width: 200px; }
 
-h1 {  font-size: 3rem; }
-
-h2 {
-  font-size: 1.4rem;
-  text-shadow: 0px 0px 12px black;
-}
+h1 {  font-size: 3.5rem; }
+h2 { font-size: 2.5rem; }
+h3 { font-size: 1.5rem; }
 
 main { /* Hauptbereich der Seite */
   display: grid;
-  grid-template-columns: 1fr 2fr 1fr;
+  grid-template-columns: 1fr 1.75fr 1fr;
   grid-template-areas:
   "historie kalender info";
-  gap: 10px;
+  gap: 1.5%;
   padding: 2% 3%;
   border-radius: 0 0 10px 10px;
   background-color: var(--background-color);
   box-shadow: 1px 10px 10px var(--boxshadow-color);
-  min-width: 1200px;
+  min-width: 35%;
   overflow-x: auto ;
 }
 
@@ -62,43 +59,48 @@ main { /* Hauptbereich der Seite */
   min-width: 600px;
 }
 
+.nav-image{
+  width: 5rem;
+  height: 3.75rem;
+}
+
+.nav-arrowb {
+  transform: scaleX(-1);
+}
+
 th.kalenderblatthead { /* Kopfzeile des Kalenders */
-  font-size: 2rem;
-  text-shadow: black 0px 0px 12px;
   background-color: var(--background-color);
   border-radius: 15px 0;
+  text-transform: uppercase;
 }
 
 .month-navigation { /* Navigationselemente für den Monat */
   display: flex; /* Flexbox für die Navigation */
   justify-content: space-between; /* Platz zwischen den Elementen */
+  align-items: center; /* Zentriert Element vertikal */
 }
 
-.nav-arrow {
-  font-size: 1.8rem;
+.nav-arrowb, .nav-arrowf { /* Pfeile für die Navigation */
   padding: 0 25px;
-  user-select: none;/* Verhindert Text-Auswahl */
+  display: flex;
 }
 
-.nav-arrow:hover {
-  transform: scale(1.4);
-  transition: 0.3s;
-}
-
-th.kalenderblatthead:hover {
-  background-color: var(--hover-color);
-  scale: 1.01;
+.nav-arrowf:hover {
+  transform: scale(1.25);
   transition: 0.3s;
   cursor: pointer;
 }
 
-.month-title {
-  user-select: none;
+.nav-arrowb:hover {
+  transform: scaleX(-1) scale(1.25);
+  transition: 0.3s;
+  cursor: pointer;
 }
 
 .month-title:hover {
   transform: scale(1.1);
   transition: 0.3s;
+  cursor: pointer;
 }
 
 #kalenderblatt table { /* Kalender Tabelle */
@@ -110,14 +112,15 @@ th.kalenderblatthead:hover {
   border: rgba(0, 0, 0, 0.719) 2px solid;
   border-radius: 50px 0;
   border-spacing: 5px;
-  padding: 10px;
+  padding: 2%;
   font-size: 1.4rem;
+  user-select: none;
 }
 
-.kalendertage td { /* Tabellenzellen im K alender */
+.kalendertage td { /* Tabellenzellen im Kalender */
   background-color: var(--background-color);
   border-radius: 10px 0;
-  padding: 1.5%;
+  padding: 1.4%;
 }
 
 #kalenderblatt {
@@ -128,28 +131,24 @@ th.kalenderblatthead:hover {
   }
 }
 
-tr.wochentage th {
+tr.wochentage th { /* Wochentage im Kalender */
   background-color:var(--kw-color);
   font-weight: bold;
   padding: 1.5%;
   border-radius: 10px 0;
 }
 
-tr.kalendertage1>td:nth-child(2) {
+tr.kalendertage1>td:nth-child(2) {/*erster Montag des Monats*/
   background:transparent;
 }
 
 tr.wochentage th:hover,
-#kalenderblatt td:hover:not(tr.kalendertage1>td:nth-child(2)) {
+#kalenderblatt td:hover:not(tr.kalendertage1>td:nth-child(2)) {/* Hover-Effekt für die Zellen */
   background-color: var(--hover-color);
-  transform: scale(1.16);
+  transform: scale(1.15);
   transition: 0.3s;
   cursor: pointer;
 }
-
-
-
-
 
 #kalenderblatt td:nth-child(7) { /* Hintergrundfarbe für Samstag */
   background-color: var(--sa-color);
@@ -166,14 +165,13 @@ tr.wochentage th:hover,
 
 #historie, #infotext {
   background-color: var(--background-color-body);
-  border: rgba(0, 0, 0, 0.719) 2px solid;
-  border-radius: 5px;
+  border-radius: 3px;
   box-shadow: 0 0 10px var(--boxshadow-color);
   overflow: auto;
   line-height: 1.5;
   scrollbar-width: thin;
   scrollbar-color: var(--hover-color) var(--background-color);
-  padding: 15px;
+  padding: 2.5%;
 }
 
 #historie {
