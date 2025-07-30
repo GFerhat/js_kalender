@@ -138,12 +138,16 @@ tr.wochentage th { /* Wochentage im Kalender */
   border-radius: 10px 0;
 }
 
-.kalendertage .notInside { 
-  background:transparent;
+.kalendertage1 .mo {
+  opacity: 0.35;
+}
+
+#kalenderblatt .kalendertage5 .sa, .kalendertage5 .so, .kalendertage5 .fr {
+  opacity: 0.35
 }
 
 #kalenderblatt tr.wochentage th:hover, 
-td:hover:not(tr.kalendertage1>td:nth-child(2)) {/* Hover-Effekt für die Zellen */
+td:hover {/* Hover-Effekt für die Zellen */
   background-color: var(--hover-color);
   transform: scale(1.15);
   transition: 0.3s;
@@ -171,7 +175,7 @@ td:hover:not(tr.kalendertage1>td:nth-child(2)) {/* Hover-Effekt für die Zellen 
   line-height: 1.5;
   scrollbar-width: thin;
   scrollbar-color: var(--hover-color) var(--background-color);
-  padding: 2.5%;
+  padding: 4.5%;
 }
 
 #historie {

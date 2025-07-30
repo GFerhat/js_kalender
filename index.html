@@ -43,7 +43,7 @@
                     <tbody class="kalendertage"><!--greift auf den tatsächlichen Tabellleninhalt zu -->
                         <tr class="kalendertage1">
                             <td class="kw">27</td><!-- td fügt der Zeile auf der wir uns befinden eine Zelle hinzu-->
-                            <td class="notInside"></td>
+                            <td class="mo">30</td>
                             <td class="di">1</td>
                             <td class="mi">2</td>
                             <td class="do">3</td>
@@ -87,15 +87,15 @@
                             <td class="di">29</td>
                             <td class="mi">30</td>
                             <td class="do">31</td>
-                            <td class="notInside"></td>
-                            <td class="notInside"></td>
-                            <td class="notInside"></td>
+                            <td class="fr">1</td>
+                            <td class="sa">2</td>
+                            <td class="so">3</td>
                         </tr>
                     </tbody>
                 </table>
             </div>
             <div id="historie">
-                <h3>Historische F1 Ereignisse am 14.07.XXXX</h3><!--fügt klassisch Text hinzu-->
+                <h3>Historische F1 Ereignisse im <span id="datumHistorie">14.07.XXXX</span></h3><!--fügt klassisch Text hinzu-->
                 <ul><!-- Erstellt unsere Liste für historische Ereignisse -->
                     <li><!--Erstellt unsere Ereignislistenpunkte-->
                         1951: Ferrari feierte mit José Froilán González 
@@ -135,8 +135,10 @@
             <div id="infotext">
                 <h3>Good to know</h3> 
                 <p>
-                    Der 14.07.2025 ist ein Montag und zwar der zweite Montag im Monat 
-                    Juli des Jahres 2025. Dieser Monat hat 31 Tage. Der 14.07.2025 
+                    Der <span id="datumInfo">....</span>ist ein <span id="wochentagInfo1">..Mittwoch..</span> 
+                    und zwar der <span id="zahlWochentag">2</span> 
+                    <span id="wochentagInfo2">....</span>im Monat 
+                    Juli des Jahres 2025. Dieser Monat hat <span id="anzahlTage"></span>31 Tage. Der 14.07.2025 
                     ist kein gesetzlicher Feiertag in Hessen. Der nächste gesetzliche 
                     Feiertag ist der 03.10.2025. (Tag der Deutschen Einheit).
                 </p>
@@ -145,7 +147,7 @@
         <footer id="footer">
             <p>© Alle Rechte vorbehalten.</p>
             <p>Erstellt von Ferhat Gümüş</p>
-
+        </footer>
         <script src="index.js"></script>
     </body>
 </html>
