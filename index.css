@@ -183,3 +183,10 @@ td:hover:not(tr.kalendertage1>td:nth-child(2)) {/* Hover-Effekt für die Zellen 
   grid-area: info;
   max-height: 200px;
 }
+
+#footer {
+  background-color: var(--background-color);
+  color: var(--text-color);
+  text-align: center;
+  padding: 20px;
+}
