@@ -64,7 +64,7 @@ main { /* Hauptbereich der Seite */
   height: 3.75rem;
 }
 
-.nav-arrowb {
+.nav-arrowback {
   transform: scaleX(-1);
 }
 
@@ -80,7 +80,7 @@ th.kalenderblatthead { /* Kopfzeile des Kalenders */
   align-items: center; /* Zentriert Element vertikal */
 }
 
-.nav-arrowb, .nav-arrowf { /* Pfeile für die Navigation */
+.nav-arrowback, .nav-arrowf { /* Pfeile für die Navigation */
   padding: 0 25px;
   display: flex;
 }
@@ -91,7 +91,7 @@ th.kalenderblatthead { /* Kopfzeile des Kalenders */
   cursor: pointer;
 }
 
-.nav-arrowb:hover {
+.nav-arrowback:hover {
   transform: scaleX(-1) scale(1.25);
   transition: 0.3s;
   cursor: pointer;
@@ -138,27 +138,27 @@ tr.wochentage th { /* Wochentage im Kalender */
   border-radius: 10px 0;
 }
 
-tr.kalendertage1>td:nth-child(2) {/*erster Montag des Monats*/
+.kalendertage .notInside { 
   background:transparent;
 }
 
-tr.wochentage th:hover,
-#kalenderblatt td:hover:not(tr.kalendertage1>td:nth-child(2)) {/* Hover-Effekt für die Zellen */
+#kalenderblatt tr.wochentage th:hover, 
+td:hover:not(tr.kalendertage1>td:nth-child(2)) {/* Hover-Effekt für die Zellen */
   background-color: var(--hover-color);
   transform: scale(1.15);
   transition: 0.3s;
   cursor: pointer;
 }
 
-#kalenderblatt td:nth-child(7) { /* Hintergrundfarbe für Samstag */
+#kalenderblatt .sa { /* Hintergrundfarbe für Samstag */
   background-color: var(--sa-color);
 }
 
-#kalenderblatt td:nth-child(8) { /* Hintergrundfarbe für Sonntag */
+#kalenderblatt .so { /* Hintergrundfarbe für Sonntag */
   background-color: var(--so-color);
 }
 
-#kalenderblatt td:nth-child(1) {  /* Hintergrundfarbe für die KW */
+#kalenderblatt .kw {  /* Hintergrundfarbe für die KW */
   background-color: var(--kw-color);
   font-weight: bold;
 }

@@ -19,7 +19,7 @@
                         <tr><!-- tr fügt eine Zeile hinzu-->
                             <th class="kalenderblatthead" colspan="8">
                                 <div class="month-navigation">
-                                    <span class="nav-arrowb">
+                                    <span class="nav-arrowback">
                                         <img class="nav-image" src="./assets/raceflag3.png" alt="backward-nav">
                                     </span>
                                     <span class="month-title"><h2>Juli 2025</h2></span>
@@ -43,7 +43,7 @@
                     <tbody class="kalendertage"><!--greift auf den tatsächlichen Tabellleninhalt zu -->
                         <tr class="kalendertage1">
                             <td class="kw">27</td><!-- td fügt der Zeile auf der wir uns befinden eine Zelle hinzu-->
-                            <td class="mo"></td>
+                            <td class="notInside"></td>
                             <td class="di">1</td>
                             <td class="mi">2</td>
                             <td class="do">3</td>
@@ -87,14 +87,17 @@
                             <td class="di">29</td>
                             <td class="mi">30</td>
                             <td class="do">31</td>
+                            <td class="notInside"></td>
+                            <td class="notInside"></td>
+                            <td class="notInside"></td>
                         </tr>
                     </tbody>
                 </table>
             </div>
             <div id="historie">
                 <h3>Historische F1 Ereignisse am 14.07.XXXX</h3><!--fügt klassisch Text hinzu-->
-                <ul><!-- erschafft eine Liste-->
-                    <li><!--li fügt einzelne Listenpunkte hinzu-->
+                <ul><!-- Erstellt unsere Liste für historische Ereignisse -->
+                    <li><!--Erstellt unsere Ereignislistenpunkte-->
                         1951: Ferrari feierte mit José Froilán González 
                         am Steuer den ersten Formel‑1‑Sieg in einem 
                         Ferrari-Chassis beim British Grand Prix in Silverstone.
