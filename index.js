@@ -89,21 +89,27 @@ let o = (h + l - (7*m) + 114) % 31;
 //0 is day 1 is month
 return new Date(jahr, n-1, o + 1);
 }
+const options = {
+  day: "2-digit",
+  month: "2-digit",
+  year:"numeric"
+};
+
 console.log(osterSonntagSpencer());
 let ostern = osterSonntagSpencer();
-console.log("ostern: ", ostern.toLocaleDateString("de-DE"));
+console.log("ostern: ", ostern.toLocaleDateString("de-DE")options);
 
 let christiHimmelfahrt = new Date (ostern); 
 christiHimmelfahrt.setDate(ostern.getDate()+39);
-console.log("Himmelfahrt:", christiHimmelfahrt.toLocaleDateString("de-DE"));
+console.log("Himmelfahrt:", christiHimmelfahrt.toLocaleDateString("de-DE", options));
 
 let pfingsten = new Date (ostern);
-pfingsten.setDate(ostern.getDate()+49)
-console.log("Pfingsten:", pfingsten.toLocaleDateString("de-DE"));
+pfingsten.setDate(ostern.getDate()+49);
+console.log("Pfingsten:", pfingsten.toLocaleDateString("de-DE", options));
 
 let karfreitag = new Date(ostern);
 karfreitag.setDate(ostern.getDate()-2);
-console.log("Karfreitag:", )
+console.log("Karfreitag:", karfreitag.toLocaleString("de-DE", options));
 
 
 
