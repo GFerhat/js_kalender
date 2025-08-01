@@ -21,20 +21,17 @@ console.log("ist ein schaltjahr datum: "+(new Date(jahr,1,29).getMonth()==1));
  
 let previousMonthEnd=new Date(heute.getFullYear(),heute.getMonth(),0);
 let firstOfTheMonth=new Date(heute.getFullYear(),heute.getMonth(),1);
- 
 let dayofPreviousMonthList=[];
 let iteratorDay=previousMonthEnd;
 let whileBreak=0;
-if(firstOfTheMonth.getDay()!=1){
-  while(iteratorDay.getDay()!=0){
-    console.log(iteratorDay);
+if(firstOfTheMonth.getDay()!=1){//wenn der erste des Monats es kein Montag ist
+  while(iteratorDay.getDay()!=0){ //bleibt aufm montag stehen
     whileBreak++;
-    dayofPreviousMonthList.push(iteratorDay);
+    dayofPreviousMonthList.push(iteratorDay.toLocaleDateString("de-DE", options));
     iteratorDay=new Date(iteratorDay.getFullYear(),iteratorDay.getMonth(),iteratorDay.getDate()-1);
      if(whileBreak>7)break;
   }
 }
- 
 console.log(dayofPreviousMonthList);
 console.log(dayofPreviousMonthList.length);
 
