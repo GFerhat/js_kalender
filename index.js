@@ -3,19 +3,17 @@ const options = {//foramtiert mit korrekter 0 falls 1 digit zahl.
   month: "2-digit",
   year: "numeric"
 };
-
-let datumAktuell = new Date();
+//Variablendeklaration (dates)
+let datumAktuell = new Date();//gibt mir exakt das Aktuelle Datum mit Zeit und Zeitzone
 let datumTag = datumAktuell.getDate();//Tag
 let monat = datumAktuell.getMonth();//Monat
 let jahr = datumAktuell.getFullYear();//Jahr
-let heutigesDatumDeutsch = datumAktuell.toLocaleDateString("de-DE", options);
-console.log(heutigesDatumDeutsch);
+let heutigesDatumDeutsch = datumAktuell.toLocaleDateString("de-DE", options);//formatiert es korrekt ins Deutsche
 
 const wochentagArray = ["Sonntag","Montag","Dienstag","Mittwoch",
   "Donnerstag","Freitag","Samstag"];
 let wochentagNum = datumAktuell.getDay();
 let wochentag = wochentagArray[wochentagNum];
-
 
 function tageBisMontagCalc(wochentagNum) { //Rechnet den aktuellen Tag -1 bis Montag
   let tageBisMontag = 0;
