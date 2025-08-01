@@ -4,18 +4,41 @@ const options = {//foramtiert mit korrekter 0 falls 1 digit zahl.
   year: "numeric"
 };
 //Variablendeklaration (dates)
-let datumAktuell = new Date();//gibt mir exakt das Aktuelle Datum mit Zeit und Zeitzone
-let datumTag = datumAktuell.getDate();//Tag
-let monat = datumAktuell.getMonth();//Monat
-let jahr = datumAktuell.getFullYear();//Jahr
-let heutigesDatumDeutsch = datumAktuell.toLocaleDateString("de-DE", options);//formatiert es korrekt ins Deutsche
+let heute = new Date();//gibt mir exakt das Aktuelle Datum mit Zeit und Zeitzone
+let tag = heute.getDate();//Tag
+let monat = heute.getMonth();//Monat
+let jahr = heute.getFullYear();//Jahr
+let heutigesDatumDeutsch = heute.toLocaleDateString("de-DE", options);//formatiert es korrekt ins Deutsche
+document.title="Kalenderblatt " + heutigesDatumDeutsch;
 
 const wochentagArray = ["Sonntag","Montag","Dienstag","Mittwoch",
   "Donnerstag","Freitag","Samstag"];
-let wochentagNum = datumAktuell.getDay();
+let wochentagNum = heute.getDay();
 let wochentag = wochentagArray[wochentagNum];
 
-function tageBisMontagCalc(wochentagNum) { //Rechnet den aktuellen Tag -1 bis Montag
+console.log("ist ein schaltjahr mathe: "+(jahr%4==0&&!jahr%100==0)||jahr%400==0);
+console.log("ist ein schaltjahr datum: "+(new Date(jahr,1,29).getMonth()==1));
+ 
+let previousMonthEnd=new Date(heute.getFullYear(),heute.getMonth(),0);
+let firstOfTheMonth=new Date(heute.getFullYear(),heute.getMonth(),1);
+ 
+let dayofPreviousMonthList=[];
+let iteratorDay=previousMonthEnd;
+let whileBreak=0;
+if(firstOfTheMonth.getDay()!=1){
+  while(iteratorDay.getDay()!=0){
+    console.log(iteratorDay);
+    whileBreak++;
+    dayofPreviousMonthList.push(iteratorDay);
+    iteratorDay=new Date(iteratorDay.getFullYear(),iteratorDay.getMonth(),iteratorDay.getDate()-1);
+     if(whileBreak>7)break;
+  }
+}
+ 
+console.log(dayofPreviousMonthList);
+console.log(dayofPreviousMonthList.length);
+
+function calcTageVormonat(wochentagNum) { //Rechnet den aktuellen Tag -1 bis Montag
   let tageBisMontag = 0;
   while (wochentagNum !== 1) {
     tageBisMontag++;
@@ -26,34 +49,30 @@ function tageBisMontagCalc(wochentagNum) { //Rechnet den aktuellen Tag -1 bis Mo
   }
   return tageBisMontag;
 }
-let tageBisMontag = tageBisMontagCalc(wochentagNum);
-tageBisMontagCalc(tageBisMontag);
+let tageBisMontag = calcTageVormonat(wochentagNum);
+calcTageVormonat(tageBisMontag);
 console.log("minus", tageBisMontag, "Tage sind inside Month");
 
 //gibt der Variable monatName immer den Aktuellen monat als String.
 const monatArray = ["Januar", "Februar", "März", "April", "Mai", "Juni",
   "Juli", "August", "September", "Oktober", "November", "Dezember"]
-let monatNum = datumAktuell.getMonth();
+let monatNum = heute.getMonth();
 let monatName = monatArray[monatNum];
 
 if (monat < 10) {
-  monat = "0" + (monat + 1);//Monat Januar wäre 0 Will ich nicht also +1
-}
-
-function vollesDatum() { //Funktion erstellt das heutige datumTag
-  return datumTag + '.' + monat + "." + jahr + " ";
+  monat = "0" + (monat + 1);//Monat Januar wäre 0, will ich nicht also +1
 }
 
 //Berechnet in welcher Monatwoche wir uns befinden. 
 // Monatwoche != Kalenderwoche
 let monatwoche;
-if (datumTag < 7) {
+if (tag < 7) {
   monatwoche = 1;
-} else if (datumTag < 14) {
+} else if (tag < 14) {
   monatwoche = 2;
-} else if (datumTag < 21) {
+} else if (tag < 21) {
   monatwoche = 3;
-} else if (datumTag < 28) {
+} else if (tag < 28) {
   monatwoche = 4;
 } else {
   monatwoche = 5;
@@ -62,19 +81,19 @@ if (datumTag < 7) {
 //überschreibt ins HTML Dokument
 //Kalenderblatt
 document.getElementById("kalenderblattHeadJs").innerHTML = monatName + " " + jahr;
-document.getElementById("kalenderblattTitel").innerHTML = vollesDatum();
+document.getElementById("kalenderblattH1").innerHTML = heutigesDatumDeutsch;
 //Historie
 document.getElementById("datumHistorie").innerHTML = monatName;
 //Infotext
-document.getElementById("datumInfo").innerHTML = vollesDatum();
-document.getElementById("datumInfo1").innerHTML = vollesDatum();
+document.getElementById("datumInfo").innerHTML = heutigesDatumDeutsch;
+document.getElementById("datumInfo1").innerHTML = heutigesDatumDeutsch;
 document.getElementById("wochentagInfo1").innerHTML = wochentag;
 document.getElementById("wochentagInfo2").innerHTML = wochentag + " ";
 document.getElementById("zahlWochentag").innerHTML = monatwoche + "te";
 document.getElementById("monatNameJs").innerHTML = " " + monatName;
 
 //Holiday Abteilung:
-function osterSonntagSpencer() { //Spencer algorythm um osternDate zu ermitteln, egal in welchem Jahr
+function getOsterSonntag() { //Spencer algorythm um osternDate zu ermitteln, egal in welchem Jahr
   let a = jahr % 19;
   let b = Math.floor(jahr / 100);
   let c = jahr % 100;
@@ -92,8 +111,7 @@ function osterSonntagSpencer() { //Spencer algorythm um osternDate zu ermitteln,
   return new Date(jahr, n - 1, o + 1); //n ist der Monat o ist der Tag
 }
 
-
-let osternDate = osterSonntagSpencer();
+let osternDate = getOsterSonntag();
 let ostern = osternDate.toLocaleDateString("de-DE", options)
 
 //berechnet die vom Ostern abhängigen Feiertage- + / - addiert / subtrahiert Tage
@@ -132,6 +150,8 @@ let formatWeihnachten2 = weihnachten2.toLocaleDateString("de-DE", options);
 
 const feiertagArray = [formatNeujahr, formatWeihnachten1, formatWeihnachten2, formatTDDE, 
   formatTagDerArbeit, ostern, karfreitag, pfingsten, christiHimmelfahrt, ostermontag]
+
+// const feiertagArrayName [{}];
 
 //sagt dem HTML infotext ob es sich im "ein" oder "kein" Feiertag handelt.
 if (feiertagArray.includes(heutigesDatumDeutsch)) { 
