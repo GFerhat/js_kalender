@@ -5,9 +5,9 @@ const options = {//foramtiert mit korrekter 0 falls 1 digit zahl.
 };
 
 let datumAktuell = new Date();
-let datumTag = datumAktuell.getDate();
-let monat = datumAktuell.getMonth();
-let jahr = datumAktuell.getFullYear();
+let datumTag = datumAktuell.getDate();//Tag
+let monat = datumAktuell.getMonth();//Monat
+let jahr = datumAktuell.getFullYear();//Jahr
 let heutigesDatumDeutsch = datumAktuell.toLocaleDateString("de-DE", options);
 console.log(heutigesDatumDeutsch);
 
@@ -135,6 +135,7 @@ let formatWeihnachten2 = weihnachten2.toLocaleDateString("de-DE", options);
 const feiertagArray = [formatNeujahr, formatWeihnachten1, formatWeihnachten2, formatTDDE, 
   formatTagDerArbeit, ostern, karfreitag, pfingsten, christiHimmelfahrt, ostermontag]
 
+//sagt dem HTML infotext ob es sich im "ein" oder "kein" Feiertag handelt.
 if (feiertagArray.includes(heutigesDatumDeutsch)) { 
   document.getElementById("obFeiertag").innerHTML= "ein ";
 } else {
