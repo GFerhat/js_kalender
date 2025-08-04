@@ -8,17 +8,18 @@ let heute = new Date();//gibt mir exakt das Aktuelle Datum mit Zeit und Zeitzone
 let tag = heute.getDate();//Tag
 let monat = heute.getMonth();//Monat
 let jahr = heute.getFullYear();//Jahr
+let tageDesMonats=new Date(heute.getFullYear(),heute.getMonth()+1,0);
 let heutigesDatumDeutsch = heute.toLocaleDateString("de-DE", options);//formatiert es korrekt ins Deutsche
 document.title="Kalenderblatt " + heutigesDatumDeutsch;
 
-const wochentagArray = ["Sonntag","Montag","Dienstag","Mittwoch",
+const wochentagArray = ["Sonntag","Montag","Dienstag","Mittwoch", //get Wochentag Name
   "Donnerstag","Freitag","Samstag"];
 let wochentagNum = heute.getDay();
 let wochentag = wochentagArray[wochentagNum];
 
 console.log("ist ein schaltjahr mathe: "+(jahr%4==0&&!jahr%100==0)||jahr%400==0);
 console.log("ist ein schaltjahr datum: "+(new Date(jahr,1,29).getMonth()==1));
- 
+
 let previousMonthEnd=new Date(heute.getFullYear(),heute.getMonth(),0);
 let firstOfTheMonth=new Date(heute.getFullYear(),heute.getMonth(),1);
 let dayofPreviousMonthList=[];
@@ -29,7 +30,7 @@ if(firstOfTheMonth.getDay()!=1){//wenn der erste des Monats es kein Montag ist
     whileBreak++;
     dayofPreviousMonthList.push(iteratorDay.toLocaleDateString("de-DE", options));
     iteratorDay=new Date(iteratorDay.getFullYear(),iteratorDay.getMonth(),iteratorDay.getDate()-1);
-     if(whileBreak>7)break;
+    if(whileBreak>7)break;
   }
 }
 console.log(dayofPreviousMonthList);
@@ -88,6 +89,7 @@ document.getElementById("wochentagInfo1").innerHTML = wochentag;
 document.getElementById("wochentagInfo2").innerHTML = wochentag + " ";
 document.getElementById("zahlWochentag").innerHTML = monatwoche + "te";
 document.getElementById("monatNameJs").innerHTML = " " + monatName;
+document.getElementById("anzahlMonatTage").innerHTML = tageDesMonats.getDate();
 
 //Holiday Abteilung:
 function getOsterSonntag() { //Spencer algorythm um osternDate zu ermitteln, egal in welchem Jahr
